@@ -6,18 +6,16 @@ window.onload = () => {
   const canvas = document.querySelector('canvas');
   const ctx = canvas.getContext('2d');
 
-  function RGBAToHexA(r, g, b, a) {
+  function RGBAToHexA(r, g, b) {
     let R = r.toString(16);
     let G = g.toString(16);
     let B = b.toString(16);
-    let A = Math.round(a * 255).toString(16);
 
-    if (R.length === 1) { R = `0${r}`; }
-    if (G.length === 1) { G = `0${g}`; }
-    if (B.length === 1) { B = `0${b}`; }
-    if (A.length === 1) { A = `0${a}`; }
+    if (R.length === 1) R = `0${R}`;
+    if (G.length === 1) G = `0${G}`;
+    if (B.length === 1) B = `0${B}`;
 
-    return `#${r}${g}${b}${a}`;
+    return `${R}${G}${B}`;
   }
 
   async function loadJson(path) {
@@ -30,8 +28,15 @@ window.onload = () => {
     const inputArray = arr;
     inputArray.forEach((element, index) => {
       element.forEach((el, ind) => {
-        // console.log(`element ${element}, index ${index}, el ${el}, ind ${ind}`);
-        ctx.fillStyle = `#${el}`;
+        let color;
+        // console.log(`el ${el}, index ${index}, ind ${ind}`);
+        if (typeof el === 'object') {
+          color = RGBAToHexA(el[0], el[1], el[2]);
+        } else {
+          color = el;
+        }
+
+        ctx.fillStyle = `#${color}`;
         ctx.fillRect(index, ind, index + 1, ind + 1);
       });
     });
@@ -52,4 +57,18 @@ window.onload = () => {
       });
   });
 
+  buttonMedium.addEventListener('click', () => {
+    buttonMedium.classList.toggle('selected');
+    buttonSmall.classList.remove('selected');
+    buttonBig.classList.remove('selected');
+
+    canvas.width = 32;
+    canvas.height = 32;
+
+    const path = './data/32x32.json';
+    loadJson(path)
+      .then((data) => {
+        draw(data);
+      });
+  });
 };
