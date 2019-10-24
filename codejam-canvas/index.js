@@ -71,4 +71,19 @@ window.onload = () => {
         draw(data);
       });
   });
+
+  buttonBig.addEventListener('click', () => {
+    buttonBig.classList.toggle('selected');
+    buttonMedium.classList.remove('selected');
+    buttonSmall.classList.remove('selected');
+
+    canvas.width = 256;
+    canvas.height = 256;
+
+    const image = new Image();
+    image.src = './data/image.png';
+    image.onload = () => {
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+    };
+  });
 };
