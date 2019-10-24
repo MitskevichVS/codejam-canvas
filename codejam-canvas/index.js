@@ -29,7 +29,6 @@ window.onload = () => {
     inputArray.forEach((element, index) => {
       element.forEach((el, ind) => {
         let color;
-        // console.log(`el ${el}, index ${index}, ind ${ind}`);
         if (typeof el === 'object') {
           color = RGBAToHexA(el[0], el[1], el[2]);
         } else {
