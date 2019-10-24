@@ -1,0 +1,25 @@
+{
+  "name": "codejam-canvas",
+  "version": "1.0.0",
+  "description": "rsschool codejam 2019-q3",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MitskevichVS/codejam-canvas.git"
+  },
+  "author": "Mitskevich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MitskevichVS/codejam-canvas/issues"
+  },
+  "homepage": "https://github.com/MitskevichVS/codejam-canvas#readme"
+}
