@@ -4,13 +4,11 @@
   "description": "rsschool codejam 2019-q3",
   "main": "index.js",
   "dependencies": {
-    "eslint": "^6.5.1",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "serve": "^10.0.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "serve"
   },
   "repository": {
     "type": "git",
