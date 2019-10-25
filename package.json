@@ -1,0 +1,23 @@
+{
+  "name": "codejam-canvas",
+  "version": "1.0.0",
+  "description": "rsschool codejam 2019-q3",
+  "main": "index.js",
+  "dependencies": {
+    "serve": "^10.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MitskevichVS/codejam-canvas.git"
+  },
+  "author": "Mitskevich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MitskevichVS/codejam-canvas/issues"
+  },
+  "homepage": "https://github.com/MitskevichVS/codejam-canvas#readme"
+}
